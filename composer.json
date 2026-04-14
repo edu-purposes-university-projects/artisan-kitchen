@@ -1,0 +1,21 @@
+{
+    "name": "baltaci/artisan-kitchen",
+    "description": "BALTACI Artisan Kitchen — Slim Framework",
+    "type": "project",
+    "require": {
+        "php": "^8.1",
+        "slim/slim": "^4.13",
+        "slim/psr7": "^1.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
