@@ -14,6 +14,8 @@ declare(strict_types=1);
 $root = dirname(__DIR__);
 
 require $root . '/vendor/autoload.php';
+require $root . '/config/env.php';
+load_env($root);
 
 use App\Database;
 

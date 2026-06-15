@@ -1,8 +1,11 @@
 <?php
-// Simple JWT utilities for authentication
-// NOTE: Replace the secret key with a strong, private value in production.
 
-$JWT_SECRET = 'CHANGE_ME_TO_A_SECURE_RANDOM_SECRET';
+$JWT_SECRET = getenv('JWT_SECRET');
+if (!is_string($JWT_SECRET) || $JWT_SECRET === '') {
+    throw new RuntimeException(
+        'JWT_SECRET is not configured. Copy .env.example to .env and set JWT_SECRET.'
+    );
+}
 
 function jwt_base64url_encode(string $data): string
 {
